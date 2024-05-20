@@ -6,7 +6,7 @@ interface Props {}
 
 const Booking: NextPage<Props> = ({}) => {
   return (
-    <div className="px-40 mt-10 pb-20">
+    <div className="px-40 mt-10">
       <div className="flex flex-wrap">
         <div className="w-1/2">
           <h2 className="poppins font-semibold text-[#5E6282]">
