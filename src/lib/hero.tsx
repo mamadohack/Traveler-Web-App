@@ -26,7 +26,7 @@ const Hero: NextPage<Props> = ({}) => {
           <h2 className="text-[#DF6951] text-lg font-bold uppercase poppins">
             Best Destinations around the world
           </h2>
-          <h2 className="volkhov text-[75px] font-bold leading-[80px] mt-5 tracking-wider text-[#181E4B] ">
+          <h2 className="volkhov text-[65px] font-bold leading-[80px] mt-5 tracking-wider text-[#181E4B] ">
             Travel,{" "}
             <span className="relative">
               enjoy
@@ -71,7 +71,7 @@ const Hero: NextPage<Props> = ({}) => {
             >
               Find out more
             </Link>
-            <span className="inline-block ms-10">
+            <Link href="#" className="inline-block ms-10">
               <svg
                 width="112"
                 height="112"
@@ -124,10 +124,10 @@ const Hero: NextPage<Props> = ({}) => {
                   </filter>
                 </defs>
               </svg>
-            </span>
-            <span className="inline-block font-semibold ms-2 text-[#686D77]">
-              Play Demo
-            </span>
+              <span className="inline-block font-semibold ms-2 text-[#686D77]">
+                Play Demo
+              </span>
+            </Link>
           </div>
         </div>
         <div className="lg:w-1/2 w-full px-5 relative">

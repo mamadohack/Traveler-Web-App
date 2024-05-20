@@ -1,3 +1,5 @@
+import Category from "@/lib/category";
+import Destinations from "@/lib/destinations";
 import Hero from "@/lib/hero";
 import Navbar from "@/lib/navbar";
 import { useState } from "react";
@@ -7,6 +9,8 @@ export default function Home() {
     <main className="">
       <Navbar></Navbar>
       <Hero></Hero>
+      <Category></Category>
+      <Destinations></Destinations>
     </main>
   );
 }
