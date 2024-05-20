@@ -19,7 +19,7 @@ const Testimonials: NextPage<Props> = ({}) => {
           </p>
         </div>
         <div className="w-[60%] px-14">
-          <div className="bg-white border drop-shadow p-8 rounded-xl">
+          <div className="bg-white border drop-shadow p-8 rounded-xl dark">
             <Image
               alt="image testimonial"
               src={testimonialImage}
