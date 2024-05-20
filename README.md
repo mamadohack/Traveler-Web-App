@@ -1,5 +1,6 @@
 ## Preview
 ![Alt image](/public/imgs/Preview.jpg?raw=true "Preview.jpg")
+![Alt image](/public/imgs/Travel%20Agency%20Landing%20Page%20UI.jpg?raw=true "Travel Agency Landing Page UI")
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
