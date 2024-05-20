@@ -10,7 +10,7 @@ const Navbar: NextPage<Props> = ({}) => {
   const [state, setstate] = useState();
   return (
     <div>
-      <nav className="flex justify-between text-base mx-auto px-5 md:px-10 lg:px-20 mt-[40px]">
+      <nav className="flex justify-between text-base mx-auto px-5 md:px-10 lg:px-40 mt-[40px] ">
         <Link href={"#"} className="inline-block">
           <svg
             width="116"

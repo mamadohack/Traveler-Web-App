@@ -21,7 +21,7 @@ const Hero: NextPage<Props> = ({}) => {
         />
       </svg>
 
-      <div className="flex px-20 flex-wrap overflow-hidden mt-5">
+      <div className="flex px-40 flex-wrap overflow-hidden mt-5">
         <div className="lg:w-1/2 w-full mt-14">
           <h2 className="text-[#DF6951] text-lg font-bold uppercase poppins">
             Best Destinations around the world
@@ -95,9 +95,9 @@ const Hero: NextPage<Props> = ({}) => {
                     width="112"
                     height="112"
                     filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                    colorInterpolationFilters="sRGB"
                   >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"

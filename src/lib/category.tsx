@@ -7,7 +7,7 @@ interface Props {}
 
 const Category: NextPage<Props> = ({}) => {
   return (
-    <div className="mt-10 space-y-5 px-20">
+    <div className="mt-10 space-y-5 px-40">
       <h2 className="text-center poppins text-[#6246E5] font-semibold text-lg">
         CATEGORY
       </h2>
@@ -108,8 +108,8 @@ const Category: NextPage<Props> = ({}) => {
             Built Wicket longer admire do barton vanity itself do in it.
           </p>
         </div>
-        <div className=" px-10 py-5 rounded-xl border relative bg-white">
-          <div className="h-[70px] relative">
+        <div className=" px-10 py-5 rounded-xl border relative bg-white x">
+          <div className="h-[70px] relative ">
             <Image
               alt="plane"
               src={planeImage}
@@ -140,7 +140,7 @@ const Category: NextPage<Props> = ({}) => {
             listening.
           </p>
         </div>
-        <div className=" px-10 py-5 rounded-xl border">
+        <div className=" px-10 py-5 rounded-xl border ">
           <div className="h-[70px] relative">
             <Image
               alt="powersupply"
