@@ -1,6 +1,7 @@
 import Booking from "@/lib/booking";
 import Category from "@/lib/category";
 import Destinations from "@/lib/destinations";
+import Footer from "@/lib/footer";
 import Hero from "@/lib/hero";
 import Navbar from "@/lib/navbar";
 import Testimonials from "@/lib/testimonials";
@@ -15,6 +16,7 @@ export default function Home() {
       <Destinations></Destinations>
       <Booking></Booking>
       <Testimonials></Testimonials>
+      <Footer></Footer>
     </main>
   );
 }

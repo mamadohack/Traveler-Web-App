@@ -40,3 +40,7 @@
 .x{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.btn-gradient {
+  background-image: linear-gradient(#FF946D, #FF7D68);
+}
