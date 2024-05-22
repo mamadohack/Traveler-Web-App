@@ -29,7 +29,7 @@ const Booking: NextPage<Props> = ({}) => {
           },
         },
       }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.5 }}
     >
       <div className="flex flex-wrap">
         <motion.div variants={itemLeft} className="w-1/2">

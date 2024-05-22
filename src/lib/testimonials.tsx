@@ -36,7 +36,7 @@ const Testimonials: NextPage<Props> = ({}) => {
           },
         },
       }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.5 }}
       className="px-40 mt-14"
     >
       <div className="flex flex-wrap">

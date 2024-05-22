@@ -35,7 +35,7 @@ const Destinations: NextPage<Props> = ({}) => {
           },
         },
       }}
-      viewport={{ once: true }}
+      viewport={{ once: true,amount:0.5 }}
     >
       <motion.h2
         variants={itemLeft}
