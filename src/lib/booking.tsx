@@ -1,14 +1,38 @@
+"use client"
 import { NextPage } from "next";
 import Image from "next/image";
 import BookingImage from "/public/imgs/bookingImage.jpg";
 import BookingAvatar from "/public/imgs/BookingAvatar.png";
+import { motion } from "framer-motion";
+
 interface Props {}
 
 const Booking: NextPage<Props> = ({}) => {
+  const itemLeft = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  };
+  const itemRight = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: 100 },
+  };
   return (
-    <div className="px-40 mt-10">
+    <motion.div
+      className="px-40 mt-10"
+      initial="hidden"
+      whileInView="visible"
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.9,
+            duration: 0.5,
+          },
+        },
+      }}
+      viewport={{ once: true }}
+    >
       <div className="flex flex-wrap">
-        <div className="w-1/2">
+        <motion.div variants={itemLeft} className="w-1/2">
           <h2 className="poppins font-semibold text-[#5E6282]">
             Easy and Fast
           </h2>
@@ -135,8 +159,8 @@ const Booking: NextPage<Props> = ({}) => {
               </span>
             </li>
           </ul>
-        </div>
-        <div className="w-1/2 drop-shadow">
+        </motion.div>
+        <motion.div variants={itemRight} className="w-1/2 drop-shadow">
           <div className="bg-white max-w-[370px] p-5 rounded-xl relative">
             <Image
               alt="booking image"
@@ -311,9 +335,9 @@ const Booking: NextPage<Props> = ({}) => {
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

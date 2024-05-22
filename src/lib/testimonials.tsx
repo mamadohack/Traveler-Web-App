@@ -1,3 +1,4 @@
+"use client";
 import { NextPage } from "next";
 import testimonialImage from "/public/imgs/testimonialImage.jpg";
 import testimonialsLogoss1 from "/public/imgs/testimonialsLogoss (1).png";
@@ -6,13 +7,40 @@ import testimonialsLogoss3 from "/public/imgs/testimonialsLogoss (3).png";
 import testimonialsLogoss4 from "/public/imgs/testimonialsLogoss (4).png";
 import testimonialsLogoss5 from "/public/imgs/testimonialsLogoss (5).png";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 interface Props {}
 
 const Testimonials: NextPage<Props> = ({}) => {
+  const itemLeft = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  };
+  const itemRight = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: 100 },
+  };
+  const itemUp = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 100 },
+  };
   return (
-    <main className="px-40 mt-14">
+    <motion.main
+      initial="hidden"
+      whileInView="visible"
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.9,
+            duration: 0.5,
+          },
+        },
+      }}
+      viewport={{ once: true }}
+      className="px-40 mt-14"
+    >
       <div className="flex flex-wrap">
-        <div className="w-[40%] pe-10">
+        <motion.div variants={itemLeft} className="w-[40%] pe-10">
           <h2 className="poppins font-semibold text-[#6246E5]">Testimonials</h2>
           <h2 className="volkhov text-[40px] font-bold leading-[3rem] text-[#14183E] mt-2">
             What people say about Us.
@@ -22,8 +50,8 @@ const Testimonials: NextPage<Props> = ({}) => {
             <span className="inline-block h-[13px] w-[13px] rounded-full bg-[#E5E5E5] drop-shadow border border-gray-400"></span>
             <span className="inline-block h-[13px] w-[13px] rounded-full bg-[#E5E5E5] drop-shadow border border-gray-400"></span>
           </p>
-        </div>
-        <div className="w-[60%] px-14">
+        </motion.div>
+        <motion.div variants={itemRight} className="w-[60%] px-14">
           <div className="bg-white border drop-shadow p-8 rounded-xl dark">
             <Image
               alt="image testimonial"
@@ -50,16 +78,19 @@ const Testimonials: NextPage<Props> = ({}) => {
               </h2>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-      <div className="flex justify-center items-center gap-12 mt-5">
+      <motion.div
+        variants={itemLeft}
+        className="flex justify-center items-center gap-12 mt-5"
+      >
         <Image alt="testimonial logo 1" src={testimonialsLogoss1}></Image>
         <Image alt="testimonial logo 2" src={testimonialsLogoss2}></Image>
         <Image alt="testimonial logo 3" src={testimonialsLogoss3}></Image>
         <Image alt="testimonial logo 4" src={testimonialsLogoss4}></Image>
         <Image alt="testimonial logo 5" src={testimonialsLogoss5}></Image>
-      </div>
-      <div className="py-10 px-20 relative">
+      </motion.div>
+      <motion.div variants={itemRight} className="py-10 px-20 relative">
         <svg
           width="70"
           height="70"
@@ -94,8 +125,8 @@ const Testimonials: NextPage<Props> = ({}) => {
               y2="77.7643"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#747DEF" />
-              <stop offset="1" stop-color="#5E3BE1" />
+              <stop stopColor="#747DEF" />
+              <stop offset="1" stopColor="#5E3BE1" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_1_489"
@@ -105,8 +136,8 @@ const Testimonials: NextPage<Props> = ({}) => {
               y2="36.8251"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#747DEF" />
-              <stop offset="1" stop-color="#5E3BE1" />
+              <stop stopColor="#747DEF" />
+              <stop offset="1" stopColor="#5E3BE1" />
             </linearGradient>
             <linearGradient
               id="paint2_linear_1_489"
@@ -116,8 +147,8 @@ const Testimonials: NextPage<Props> = ({}) => {
               y2="36.5259"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#747DEF" />
-              <stop offset="1" stop-color="#5E3BE1" />
+              <stop stopColor="#747DEF" />
+              <stop offset="1" stopColor="#5E3BE1" />
             </linearGradient>
           </defs>
         </svg>
@@ -137,8 +168,8 @@ const Testimonials: NextPage<Props> = ({}) => {
             Subscribe
           </button>
         </div>
-      </div>
-    </main>
+      </motion.div>
+    </motion.main>
   );
 };
 

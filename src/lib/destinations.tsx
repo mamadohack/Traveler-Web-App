@@ -1,22 +1,56 @@
+"use client"
 import { NextPage } from "next";
 import Image from "next/image";
 import destination1 from "/public/imgs/destination (1).png";
 import destination2 from "/public/imgs/destination (2).png";
 import destination3 from "/public/imgs/destination (3).png";
+import { motion } from "framer-motion";
 
 interface Props {}
 
 const Destinations: NextPage<Props> = ({}) => {
+  const itemLeft = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  };
+  const itemRight = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: 100 },
+  };
+  const itemUp = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 100 },
+  };
+
   return (
-    <div className="mt-20 space-y-5 px-40 ">
-      <h2 className="text-center poppins text-[#6246E5] font-semibold text-lg">
+    <motion.div
+      className="mt-20 space-y-5 px-40 "
+      initial="hidden"
+      whileInView="visible"
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.5,
+            duration: 0.5,
+          },
+        },
+      }}
+      viewport={{ once: true }}
+    >
+      <motion.h2
+        variants={itemLeft}
+        className="text-center poppins text-[#6246E5] font-semibold text-lg"
+      >
         Top Selling
-      </h2>
-      <h2 className="text-center volkhov text-[#14183E] text-[45px] font-bold">
+      </motion.h2>
+      <motion.h2
+        variants={itemRight}
+        className="text-center volkhov text-[#14183E] text-[45px] font-bold"
+      >
         Top Destinations
-      </h2>
+      </motion.h2>
       <div className="grid grid-cols-3 gap-20">
-        <div className="relative drop-shadow">
+        <motion.div variants={itemUp} className="relative drop-shadow">
           <Image
             alt="dest1"
             src={destination1}
@@ -46,8 +80,11 @@ const Destinations: NextPage<Props> = ({}) => {
               6 Days Trip
             </p>
           </div>
-        </div>
-        <div className="relative rounded-xl bg-white overflow-clip  pb-4 drop-shadow">
+        </motion.div>
+        <motion.div
+          variants={itemUp}
+          className="relative rounded-xl bg-white overflow-clip  pb-4 drop-shadow"
+        >
           <Image
             alt="dest2"
             src={destination2}
@@ -77,8 +114,8 @@ const Destinations: NextPage<Props> = ({}) => {
               9 Days Trip
             </p>
           </div>
-        </div>
-        <div className="relative drop-shadow">
+        </motion.div>
+        <motion.div variants={itemUp} className="relative drop-shadow">
           <Image
             alt="dest3"
             src={destination3}
@@ -108,9 +145,9 @@ const Destinations: NextPage<Props> = ({}) => {
               28 Days Trip
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,21 +1,61 @@
+"use client"
 import { NextPage } from "next";
 import planeImage from "/public/imgs/plane.png";
 import microphoneImage from "/public/imgs/microphone.png";
 import power_supply from "/public/imgs/power-supply 1.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 interface Props {}
 
 const Category: NextPage<Props> = ({}) => {
+  const itemLeft = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  };
+  const itemRight = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: 100 },
+  };
+  const itemUp = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 100 },
+  };
+
   return (
-    <div className="mt-10 space-y-5 px-40">
-      <h2 className="text-center poppins text-[#6246E5] font-semibold text-lg">
+    <motion.div
+      className="mt-10 space-y-5 px-40"
+      initial="hidden"
+      whileInView="visible"
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.5,
+            duration: 0.5,
+          },
+        },
+      }}
+      viewport={{ once: true }}
+    >
+      <motion.h2
+        variants={itemLeft}
+        // transition={{ delay: 0.5, duration: 0.5 }}
+        className="text-center poppins text-[#6246E5] font-semibold text-lg"
+      >
         CATEGORY
-      </h2>
-      <h2 className="text-center volkhov text-[#14183E] text-[45px] font-bold">
+      </motion.h2>
+      <motion.h2
+        variants={itemRight}
+        // transition={{ delay: 1, duration: 0.5 }}
+        className="text-center volkhov text-[#14183E] text-[45px] font-bold"
+      >
         We Offer Best Services
-      </h2>
+      </motion.h2>
       <div className="grid grid-cols-4 gap-16">
-        <div className="px-10 py-5 rounded-xl border">
+        <motion.div
+          variants={itemUp}
+          // transition={{ delay: 1.5, duration: 0.5 }}
+          className="px-10 py-5 rounded-xl border"
+        >
           <svg
             width="67"
             height="70"
@@ -107,8 +147,12 @@ const Category: NextPage<Props> = ({}) => {
           <p className="poppins text-[#959BAA] text-center mt-3">
             Built Wicket longer admire do barton vanity itself do in it.
           </p>
-        </div>
-        <div className=" px-10 py-5 rounded-xl border relative bg-white x">
+        </motion.div>
+        <motion.div
+          variants={itemUp}
+          // transition={{ delay: 2, duration: 0.5 }}
+          className=" px-10 py-5 rounded-xl border relative bg-white x"
+        >
           <div className="h-[70px] relative ">
             <Image
               alt="plane"
@@ -123,8 +167,12 @@ const Category: NextPage<Props> = ({}) => {
             Engrossed listening. Park gate sell they west hard for the.
           </p>
           <div className="absolute -bottom-0 left-0 w-[80px] h-[80px] bg-[#DF6951] -translate-x-1/2 translate-y-1/2 -z-10 rounded-tl-[25%] rounded-br-[10%]"></div>
-        </div>
-        <div className=" px-10 py-5 rounded-xl border">
+        </motion.div>
+        <motion.div
+          variants={itemUp}
+          // transition={{ delay: 2.5, duration: 0.5 }}
+          className=" px-10 py-5 rounded-xl border"
+        >
           <div className="h-[70px] relative">
             <Image
               alt="microphone"
@@ -139,8 +187,12 @@ const Category: NextPage<Props> = ({}) => {
             Barton vanity itself do in it. Preferd to men it engrossed
             listening.
           </p>
-        </div>
-        <div className=" px-10 py-5 rounded-xl border ">
+        </motion.div>
+        <motion.div
+          variants={itemUp}
+          // transition={{ delay: 3, duration: 0.5 }}
+          className=" px-10 py-5 rounded-xl border "
+        >
           <div className="h-[70px] relative">
             <Image
               alt="powersupply"
@@ -154,9 +206,9 @@ const Category: NextPage<Props> = ({}) => {
           <p className="poppins text-[#959BAA] text-center mt-3">
             Engrossed listening. Park gate sell they west hard for the.
           </p>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
