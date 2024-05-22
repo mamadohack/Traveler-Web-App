@@ -25,7 +25,6 @@ const Testimonials: NextPage<Props> = ({}) => {
     hidden: { opacity: 0, y: 100 },
   };
   return (
-    //test
     <motion.main
       initial="hidden"
       whileInView="visible"
